@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import '@patternfly/react-core/dist/styles/base.css';
 import { TodoList } from './components/TodoList';
 import { AddTodoForm } from './components/AddTodoForm'
+import { Card } from '@patternfly/react-core';
+
 
 
 
@@ -31,10 +34,12 @@ const App: React.FC = () => {
   }
 
   return (
-  <React.Fragment>
-    <TodoList todos={todos} toggleTodo={toggleTodo} />
-    <AddTodoForm addTodo={addTodo}/>
-  </React.Fragment>
+    <Card>
+      <React.Fragment>
+        <TodoList todos={todos} toggleTodo={toggleTodo} />
+        <AddTodoForm addTodo={addTodo}/>    
+     </React.Fragment>
+    </Card>
   )};
 
 export default App;
